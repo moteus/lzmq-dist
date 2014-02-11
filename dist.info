@@ -1,4 +1,4 @@
-name = "lzmq"
+name = "lzmq-ffi"
 version = "0.3.5"
 
 desc = "Lua bindings to ZeroMQ"
@@ -8,6 +8,11 @@ url = "https://github.com/moteus/lzmq"
 maintainer = "Alexey Melnichuk"
 
 depends = {
-  "lua > 5.1",
+  "luajit >= 2.0",
   "libzmq >= 3.2"
+}
+
+-- Same modules names
+conflicts = {
+  "lzmq"
 }

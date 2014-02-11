@@ -32,18 +32,20 @@ before_script:
 
 # Build the module
 script:
-  - ~/luadist _test install lua-5.1.5 -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
+  - ~/luadist _test install luajit-2.0.2 -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
   - ~/luadist _test make . -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
   # - ~/_tools/travis/travis build
 
 # Execute additional tests or commands
 after_script:
   - ~/_tools/travis/travis test
+  - cd lzmq/test
+  - luajit test.lua
 
 # Only watch the master branch
 branches:
   only:
-    - master
+    - lzmq-ffi
 
 # Notify the LuaDist Dev group if needed
 notifications:
