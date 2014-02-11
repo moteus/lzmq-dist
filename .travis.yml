@@ -32,7 +32,8 @@ before_script:
 
 # Build the module
 script:
-  ~/luadist _test make . -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
+  - ~/luadist _test install lua-5.1.5 -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
+  - ~/luadist _test make . -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
   # - ~/_tools/travis/travis build
 
 # Execute additional tests or commands
