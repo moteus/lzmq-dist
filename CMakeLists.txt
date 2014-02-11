@@ -31,4 +31,4 @@ install_data ( lzmq/README.md lzmq/LICENCE.txt )
 
 install_example ( lzmq/examples/ )
 
-install_test ( lzmq/test/ )
+install_test ( lzmq/test/ lzmq/examples/utils.lua )
