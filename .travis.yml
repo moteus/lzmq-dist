@@ -32,7 +32,8 @@ before_script:
 
 # Build the module
 script:
-  - ~/_tools/travis/travis build
+  ~/luadist _test make . -binary=false -verbose -DCMAKE_TOOLCHAIN_FILE=$TOOLFILE
+  # - ~/_tools/travis/travis build
 
 # Execute additional tests or commands
 after_script:
