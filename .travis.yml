@@ -40,7 +40,7 @@ script:
 after_script:
   - ~/_tools/travis/travis test
   - cd lzmq/test
-  - _test/bin/luajit test.lua
+  - $TRAVIS_BUILD_DIR/_test/bin/luajit test.lua
 
 # Only watch the master branch
 branches:
