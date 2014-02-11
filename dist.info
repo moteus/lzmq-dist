@@ -11,3 +11,8 @@ depends = {
   "lua > 5.1",
   "libzmq >= 3.2"
 }
+
+-- Same modules names
+conflicts = {
+  "lzmq-ffi"
+}
